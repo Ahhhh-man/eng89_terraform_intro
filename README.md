@@ -1,4 +1,10 @@
-# Terraform Setup
+# Terraform
+## Introduction
+- What is Terraform?
+
+> "Terraform is an infrastructure as code (IaC) tool that allows you to build, change, and version infrastructure safely and efficiently." - [terraform](https://www.terraform.io/intro/index.html)
+
+![](imgs/terraform-iac.png)
 ## Install terraform via [chocolatey](https://chocolatey.org/)
 - Install chocolatey;  in powershell:
 ```powershell

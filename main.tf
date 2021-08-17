@@ -20,6 +20,14 @@ resource "aws_instance" "app_instance" {
 	tags = {
 	  "Name" = var.NAME_OF_INSTANCE
 	}
+	/*
+	provisioner "remote-exec" {
+		inline = [
+		  "cd app",
+		  "node app.js"
+		] 
+	}
+	*/ 
 }
 
 

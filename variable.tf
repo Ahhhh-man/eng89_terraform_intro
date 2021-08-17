@@ -1,7 +1,7 @@
 variable "AWS_KEY_NAME" { default = "eng89_aman_161803" }
 variable "REGION" { default = "eu-west-1" }
 variable "SUBREGION" { default = "eu-west-1a" }
-variable "AMI" { default = "ami-038d7b856fe7557b3" }
+variable "AMI" { default = "ami-08d4a78f55a8a190c" } # ami-038d7b856fe7557b3 is default 16.04
 variable "SPLICED_CIDR_BLOCK" { default = "10.207" }
 variable "MY_IP" { default = "0.0.0.0" } # NOT USED, BUT POC
 

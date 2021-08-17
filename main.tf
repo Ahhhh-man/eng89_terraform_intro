@@ -9,10 +9,14 @@ provider "aws" { # A provider block is used to specify a provider configuration
 
 
 resource "aws_instance" "app_instance" {
-	key_name = var.AWS_KEY_NAME
 	ami = var.AMI 
 	instance_type = "t2.micro"
 	associate_public_ip_address = true
+
+    subnet_id = aws_subnet.eng89_aman_tf_net_public.id 
+    vpc_security_group_ids = [aws_security_group.eng89_aman_tf_sg_public.id]
+	key_name = var.AWS_KEY_NAME
+
 	tags = {
 	  "Name" = var.NAME_OF_INSTANCE
 	}

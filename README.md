@@ -56,3 +56,6 @@ key_name = "eng89_aman_qwerty"
 ```
 
 or making a new one, just use aws to create a new keypair.
+
+---
+![](https://github.com/Ahhhh-man/eng89_terraform_intro/blob/main/imgs/diagram_vpc.png)

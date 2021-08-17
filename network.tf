@@ -23,6 +23,8 @@ resource "aws_route_table_association" "eng89_aman_tf_rtb_assoc_public" {
 }
 
 resource "aws_security_group" "eng89_aman_tf_sg_public" {
+    name = var.NAME_OF_SG_PUBLIC
+    description = "A useful description."
     vpc_id = aws_vpc.eng89_aman_tf_vpc.id
 
     egress { # All traffic

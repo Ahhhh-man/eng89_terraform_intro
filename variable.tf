@@ -3,6 +3,7 @@ variable "REGION" { default = "eu-west-1" }
 variable "SUBREGION" { default = "eu-west-1a" }
 variable "AMI" { default = "ami-038d7b856fe7557b3" }
 variable "SPLICED_CIDR_BLOCK" { default = "10.207" }
+variable "MY_IP" { default = "0.0.0.0" } # NOT USED, BUT POC
 
 # Names
 variable "NAME_OF_INSTANCE" { default = "eng89_aman_tf" }

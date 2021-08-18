@@ -35,12 +35,16 @@ resource "aws_security_group" "eng89_aman_tf_sg_public" {
     }
 
     ingress { 
-        protocol = "ssh"
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
 
     ingress { # for nginx
-        protocol = "http"
+        from_port = 80
+        to_port = 80
+        protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
 
@@ -56,3 +60,26 @@ resource "aws_security_group" "eng89_aman_tf_sg_public" {
     }
 }
 
+resource "aws_security_group" "eng89_aman_tf_sg_private" {
+    name = var.NAME_OF_SG_PRIVATE
+    description = "A useful description"
+    vpc_id = aws_vpc.eng89_aman_tf_vpc.id
+
+    ingress { 
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress { # for nginx
+        from_port = 27017
+        to_port = 27017
+        protocol = "tcp"
+        cidr_blocks = [aws_security_group.head_node_sg.id]
+    }
+
+    tags = {
+        "Name" = var.NAME_OF_SG_PRIVATE
+    }
+}
